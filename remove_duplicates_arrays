@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        
+        int n=nums.size();
+        if(n==1||n==0){
+            return n;
+
+        }
+        int j=0; //create a new array extra space
+        for(int i=0;i<n-1;i++){
+
+            if(nums[i]!=nums[i+1]){  //if element i and i+1 not same ie both are disntnict send it to array j
+                nums[j++]=nums[i];
+            }
+
+        }
+        nums[j++]=nums[n-1]; // keep the last elemtn of the i into j;
+        return j;
+    }
+}; 
